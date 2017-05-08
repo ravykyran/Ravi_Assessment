@@ -11,18 +11,30 @@ import com.wipro.bank.entity.Account;
  */
 public class App 
 {
-	public static final List<Account> accounts;
+	static final List<Account> accounts = new ArrayList<Account>();
+	
+	App(){
+		
+	}
+	
+//	public App (List<Account> accounts){
+//		this.accounts = accounts;
+//	}
 		
 	public Account getAccountDetailsByID(int id){
 		
 		Account account = null;
 		
-		
-		
-		
-		
-		return account;		
+		if(id>0){
+			for(Account a:accounts){
+				if(id==a.getAccountID()){
+					account=a;
+				}
+			}
+		}
+		return account;
 	}
+
 	
 	
 	public List<Account> getAccountDetailsByBalance(double amount){
