@@ -39,26 +39,30 @@ public class App
 	
 	public List<Account> getAccountDetailsByBalance(double amount){
 		List<Account> foundAccount = new ArrayList<Account>();
-		if (amount == 0)
-		{
-			for(Account a: accounts){
-				if(a!=null){
-					if(a.getBalance()==0){
-						foundAccount.add(a);
+		
+
+			for(Account acc: accounts){
+				if(acc!=null){
+					if(acc.getBalance()>amount){
+						System.out.println(amount+">=" +acc.getBalance());
+						foundAccount.add(acc);
 					}
 				}
 			}
 			
-		}else if (amount>0){
-			for (Account a: accounts){
-				if(a.getBalance()!=0){
-					if(amount==a.getBalance()){
-						foundAccount.add(a);
-					}
-				}
+			System.out.println(foundAccount.size()+" ****");
+			if(foundAccount.size()==0){
+				foundAccount=null;
 			}
-		}
+			
+			
+		
+		
+		
 		return foundAccount;
-	} 
-	
+
+
+	}
 }
+
+
