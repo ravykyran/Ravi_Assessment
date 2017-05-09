@@ -49,7 +49,7 @@ public class AppTest {
 		assertNull("When No account found:",new App().getAccountDetailsByBalance(909.01));
 	}
 	
-//	@Test
+	@Test
 	public void getAccountDetailsByBalance2(){
 		App.accounts.add(new Account (1,"acc1",101.11));		
 		App.accounts.add(new Account (2,"patel",202.22));
@@ -61,7 +61,7 @@ public class AppTest {
 		assertEquals(App.accounts.size(),actualAccounts.size());
 	}
 	
-//	@Test
+	@Test
 	public void getAccountDetailsByBalance3(){
 		App.accounts.add(new Account (1,"acc1",101.11));		
 		App.accounts.add(new Account (2,"patel",202.22));
@@ -82,7 +82,7 @@ public class AppTest {
 		
 		List<Account> actualAccounts=new App().getAccountDetailsByBalance(amount);
 		assertNotNull(actualAccounts);
-		//assertEquals(checkActualAccounts.size(),actualAccounts.size());
+		assertEquals(checkActualAccounts.size(),actualAccounts.size());
 	}
 
 }
